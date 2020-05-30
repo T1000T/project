@@ -1,0 +1,50 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('Hello') {
+         steps {
+            echo 'Hello, starting job'
+        }
+    }
+        stage('runnig python') {
+            when {
+                    expression { language == 'all' || language == 'python'
+                    }
+                }
+            steps {
+                echo 'running python'
+                sh """
+                chmod 755 python.py
+                ./python.py $language
+                """
+            }
+        }
+        stage('runnig bash') {
+            when {
+                    expression { language == 'all' || language == 'bash'
+                    }
+                }
+            steps {
+                echo 'runing bash'
+                sh """
+                chmod 755 bash.sh
+                sh bash.sh
+                """
+            }
+        }
+        stage('runnig cn') {
+            when {
+                    expression { language == 'all' || language == 'c'
+                    }
+                }
+            steps {
+                echo 'running c'
+                sh """
+                chmod 755 c.exe
+                ./c.exe
+                """
+            }    
+        }
+   }
+}
