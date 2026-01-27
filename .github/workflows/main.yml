@@ -1,4 +1,4 @@
-on: [push, manual]
+on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
