@@ -1,9 +1,10 @@
 name: workflow learning
 jobs:
   test:
-    secrets: ${{ secrets.DEV }}
     runs-on: ubuntu-24.04
     name: secrets test
     steps:
+      env:
+        secrets: ${{ secrets.DEV }}
       run:
-        python3 
+        python3 python.py
