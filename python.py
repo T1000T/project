@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-import sys
+import os
+secrets = os.environ["secrets"]
 
-print('choosen language to run:', str(sys.argv[1]))
-print('python script ended')
+print("start")
+print(secrets)
+print("end")
