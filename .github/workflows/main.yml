@@ -1,11 +1,12 @@
-name: workflow learning
+on: [push, manual]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: secrets test
-    - uses: actions/checkout@v4
-      env:
-        secrets: ${{ secrets.DEV }}
-      run: |
-        python3 python.py
+      - name: checkou
+      - uses: actions/checkout@v4
+      - name: secret test
+        env:
+          secrets: ${{ secrets.DEV }}
+        run: |
+          python3 python.py
