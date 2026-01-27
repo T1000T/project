@@ -1,10 +1,13 @@
 name: workflow learning
 jobs:
   test:
-    runs-on: ubuntu-24.04
-    name: secrets test
+    runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
       env:
         secrets: ${{ secrets.DEV }}
       run:
         python3 python.py
+    
+    name: secrets test
+    
