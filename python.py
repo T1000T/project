@@ -3,5 +3,8 @@ import os
 secrets = os.environ["secrets"]
 
 print("start")
-print(secrets)
+if secrets:
+    print("secret found")
+else:
+    print("no secret found")
 print("end")
