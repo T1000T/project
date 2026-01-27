@@ -1,3 +1,11 @@
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'manual run'
+        required: true
+        default: 'Testing'
+
 on: [push]
 jobs:
   test:
