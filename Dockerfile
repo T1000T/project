@@ -1,5 +1,8 @@
 # syntax=docker/dockerfile:1
 FROM python:3.13
+USER root
+RUN groupadd -g <groupid>  docker && usermod -aG docker jenkins
+USER jenkins
 WORKDIR /usr/local/app
 COPY . ./
 RUN pip install --no-cache-dir -r requirements.txt
