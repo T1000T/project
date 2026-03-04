@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 FROM python:3.13
 USER root
-RUN groupadd -g <groupid>  docker && usermod -aG docker jenkins
+RUN groupadd -g 998 docker && usermod -aG docker jenkins
 USER jenkins
 WORKDIR /usr/local/app
 COPY . ./
